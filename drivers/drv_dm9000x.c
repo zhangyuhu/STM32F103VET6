@@ -91,7 +91,7 @@ void GPIO_FSMC_Configuration(void)
 	                        GPIO_PIN_7 |GPIO_PIN_8 | GPIO_PIN_9 | GPIO_PIN_10 | GPIO_PIN_11 |
 	                        GPIO_PIN_14 | GPIO_PIN_15;
     GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStructure.Mode  = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStructure.Mode  = GPIO_MODE_AF_PP;
 	HAL_GPIO_Init(GPIOD, &GPIO_InitStructure);
 	
 	
@@ -111,7 +111,7 @@ void GPIO_FSMC_Configuration(void)
 	                        GPIO_PIN_11 | GPIO_PIN_12 | GPIO_PIN_13 | GPIO_PIN_14 |
 	                        GPIO_PIN_15;
     GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
-    GPIO_InitStructure.Mode  = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStructure.Mode  = GPIO_MODE_AF_PP;
 	HAL_GPIO_Init(GPIOE, &GPIO_InitStructure);
 }  				
 void DM9000A_FSMCConfig(void) 
@@ -132,7 +132,7 @@ void DM9000A_FSMCConfig(void)
     Timing. AccessMode = FSMC_ACCESS_MODE_A;
 
 
-    hsram.Init. NSBank= FSMC_NORSRAM_BANK4;
+    hsram.Init. NSBank= FSMC_NORSRAM_BANK1;
     hsram.Init. DataAddressMux= FSMC_DATA_ADDRESS_MUX_DISABLE;
     hsram.Init. MemoryType =FSMC_MEMORY_TYPE_SRAM;
     hsram.Init. MemoryDataWidth=FSMC_NORSRAM_MEM_BUS_WIDTH_16;
@@ -148,6 +148,7 @@ void DM9000A_FSMCConfig(void)
 
     if(HAL_SRAM_Init(&hsram, &Timing, &Timing) != HAL_OK)
     {
+        LOG_D("HAL_SRAM_Init error");
         return;//³ö´í
     }
 
