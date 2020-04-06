@@ -16,8 +16,8 @@
 #define DBG_LVL DBG_LOG
 #include <rtdbg.h>
 
-/* PLEASE DEFINE the LED0 pin for your board, such as: PA5 */
-#define LED0_PIN    GET_PIN(A, 5)
+/* PLEASE DEFINE the LED0 pin for your board, such as: PC14 */
+#define LED0_PIN    GET_PIN(C, 14)
 
 int main(void)
 {
