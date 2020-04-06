@@ -134,6 +134,8 @@ extern "C" {
 #include "drivers/rt_inputcapture.h"
 #endif
 
+#include "drv_dm9000x.h"
+
 #ifdef __cplusplus
 }
 #endif
