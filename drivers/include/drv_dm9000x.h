@@ -4,7 +4,7 @@
 #ifndef _DM9000X_H_
 #define _DM9000X_H_
 
-#define DM9000_ID		    0x90000A46
+#define DM9000_ID           0x90000A46
 
 /* although the registers are 16 bit, they are 32-bit aligned.
  */
@@ -29,7 +29,7 @@
 #define DM9000_PAR          0x10
 #define DM9000_MAR          0x16
 
-#define DM9000_GPCR	        0x1e
+#define DM9000_GPCR         0x1e
 #define DM9000_GPR          0x1f
 #define DM9000_TRPAL        0x22
 #define DM9000_TRPAH        0x23
@@ -45,11 +45,11 @@
 #define DM9000_SMCR         0x2F
 
 #define DM9000_ETXCSR       0x30
-#define DM9000_TCCR	        0x31
-#define DM9000_RCSR	        0x32
+#define DM9000_TCCR         0x31
+#define DM9000_RCSR         0x32
 
-#define CHIPR_DM9000A	    0x19
-#define CHIPR_DM9000B	    0x1A
+#define CHIPR_DM9000A       0x19
+#define CHIPR_DM9000B       0x1A
 
 #define DM9000_MRCMDX       0xF0
 #define DM9000_MRCMD        0xF2
@@ -69,7 +69,7 @@
 #define NCR_FCOL            (1<<4)
 #define NCR_FDX             (1<<3)
 #define NCR_LBK             (3<<1)
-#define NCR_RST	            (1<<0)
+#define NCR_RST             (1<<0)
 
 #define NSR_SPEED           (1<<7)
 #define NSR_LINKST          (1<<6)
@@ -96,7 +96,7 @@
 #define RCR_WTDIS           (1<<6)
 #define RCR_DIS_LONG        (1<<5)
 #define RCR_DIS_CRC         (1<<4)
-#define RCR_ALL	            (1<<3)
+#define RCR_ALL             (1<<3)
 #define RCR_RUNT            (1<<2)
 #define RCR_PRMSC           (1<<1)
 #define RCR_RXEN            (1<<0)
@@ -110,15 +110,15 @@
 #define RSR_CE              (1<<1)
 #define RSR_FOE             (1<<0)
 
-#define WCR_LINKEN		    (1 << 5)
-#define WCR_SAMPLEEN		(1 << 4)
-#define WCR_MAGICEN		    (1 << 3)
-#define WCR_LINKST		    (1 << 2)
-#define WCR_SAMPLEST		(1 << 1)
-#define WCR_MAGICST		    (1 << 0)
+#define WCR_LINKEN          (1 << 5)
+#define WCR_SAMPLEEN        (1 << 4)
+#define WCR_MAGICEN         (1 << 3)
+#define WCR_LINKST          (1 << 2)
+#define WCR_SAMPLEST        (1 << 1)
+#define WCR_MAGICST         (1 << 0)
 
-#define FCTR_HWOT(ot)	    (( ot & 0xf ) << 4 )
-#define FCTR_LWOT(ot)	    ( ot & 0xf )
+#define FCTR_HWOT(ot)       (( ot & 0xf ) << 4 )
+#define FCTR_LWOT(ot)       ( ot & 0xf )
 
 #define IMR_PAR             (1<<7)
 #define IMR_ROOM            (1<<3)
@@ -141,34 +141,33 @@
 
 #define GPCR_GEP_CNTL       (1<<0)
 
-#define TCCR_IP		        (1<<0)
-#define TCCR_TCP	        (1<<1)
-#define TCCR_UDP	        (1<<2)
+#define TCCR_IP             (1<<0)
+#define TCCR_TCP            (1<<1)
+#define TCCR_UDP            (1<<2)
 
-#define RCSR_UDP_BAD	    (1<<7)
-#define RCSR_TCP_BAD	    (1<<6)
-#define RCSR_IP_BAD	        (1<<5)
-#define RCSR_UDP	        (1<<4)
-#define RCSR_TCP	        (1<<3)
-#define RCSR_IP		        (1<<2)
-#define RCSR_CSUM	        (1<<1)
-#define RCSR_DISCARD	    (1<<0)
+#define RCSR_UDP_BAD        (1<<7)
+#define RCSR_TCP_BAD        (1<<6)
+#define RCSR_IP_BAD         (1<<5)
+#define RCSR_UDP            (1<<4)
+#define RCSR_TCP            (1<<3)
+#define RCSR_IP             (1<<2)
+#define RCSR_CSUM           (1<<1)
+#define RCSR_DISCARD        (1<<0)
 
 #define DM9000_RESET        0x00
 
-#define DM9000_PKT_RDY		0x01	/* Packet ready to receive */
-#define DM9000_PKT_ERR		0x02
-#define DM9000_PKT_MAX		1536	/* Received packet max size */
+#define DM9000_PKT_RDY      0x01    /* Packet ready to receive */
+#define DM9000_PKT_ERR      0x02
+#define DM9000_PKT_MAX      1536    /* Received packet max size */
 
 /* DM9000A / DM9000B definitions */
 
-#define IMR_LNKCHNG		    (1<<5)
-#define IMR_UNDERRUN		(1<<4)
+#define IMR_LNKCHNG         (1<<5)
+#define IMR_UNDERRUN        (1<<4)
 
-#define ISR_LNKCHNG		    (1<<5)
-#define ISR_UNDERRUN		(1<<4)
+#define ISR_LNKCHNG         (1<<5)
+#define ISR_UNDERRUN        (1<<4)
 
-void dm9000x_gpio_inital(void);
 void dm9000x_set_macaddr(rt_uint8_t *macaddr);
 void dm9000x_inital(rt_uint8_t *macaddr);
 rt_uint32_t dm9000x_read_id(void);
